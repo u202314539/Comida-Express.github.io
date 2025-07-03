@@ -1,0 +1,92 @@
+.valoracion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: #f9d0b2;
+  padding: 2rem 1rem;
+}
+
+/* Formulario */
+.valoracion-form {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.valoracion-form h2 {
+  margin-bottom: 1rem;
+}
+
+.valoracion-form label {
+  display: block;
+  margin-top: 1rem;
+}
+
+.valoracion-form button {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  width: 100%;
+  background-color: #fb7b19;
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.valoracion-form button:hover {
+  background-color: #f7a362;
+}
+
+/* Visualizacion */
+.valoracion-visual {
+  flex: 1;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.valoracion-visual h2 {
+  margin-bottom: 1rem;
+}
+
+.valoracion-visual ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Barra de Progreso Visual */
+.barra {
+  position: relative;
+  background-color: #fb7b19;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem 1rem;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+.valor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: light-gray;
+  opacity: 0.2;
+  border-radius: 8px 0 0 8px;
+  z-index: 1;
+}
+
+.barra span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .valoracion {
+    flex-direction: column;
+  }
+}

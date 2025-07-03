@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Comida Express</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="subetureceta.css" />
+    <link rel="stylesheet" href="valoraciones.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Menú Superior -->
+    <nav class="top-header">
+      <a href="#" class="logo">
+        <img src="Imagenes/logo.png" alt="Logo" />
+      </a>
+
+      <!-- Boton Hamburguesa -->
+      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+
+      <!-- Menú de Navegación -->
+      <ul class="menu-hori">
+        <li>
+          <a href="#">Quienes Somos</a>
+          <ul class="menu-ver">
+            <li><a href="#presentacion">Presentación</a></li>
+            <li><a href="#proposito">Propósito</a></li>
+          </ul>
+        </li>
+        <li><a href="#subetureceta">Sube Tu Receta</a></li>
+        <li><a href="#valoracion">Valoración</a></li>
+      </ul>
+    </nav>
+
+    <!-- Sección Presentación -->
+    <section class="presentacion" id="presentacion">
+      <h2>Presentación</h2>
+      <div class="content-presentacion">
+        <div class="img-presentacion">
+          <img src="Imagenes/img-presentacion.jpg" alt="Imagen de comidas" />
+        </div>
+        <div class="text-presentacion">
+          <p>
+            Nosotros somos Comida Express, ofrecemos una página dedicada a las
+            recetas de comida rápidas, buscamos que cada plato nuevo que
+            conozcas sea una nueva experiencia para ti.
+          </p>
+          <p>
+            En esta página te podemos ofrecer la posibilidad de inspirarte de
+            otras recetas como también poder compartir las tuyas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Propósito -->
+    <section class="proposito" id="proposito">
+      <h2>Propósito</h2>
+      <div class="content-proposito">
+        <div class="text-proposito">
+          <p>
+            Podrás aprender a cocinar ya sean recetas sencillas que la comunidad
+            pueda compartir, de diferentes países y localidades, proponiendo a
+            su vez variaciones y aumentar tu conocimiento culinario.
+          </p>
+        </div>
+        <div class="video-proposito">
+          <iframe
+            src="https://www.youtube.com/embed/PPBTtb0gNbU"
+            title="Propósito"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Sube Tu Receta -->
+    <section id="subetureceta" class="subetureceta">
+      <h2>Sube Tu Receta</h2>
+      <div class="content-subetureceta">
+        <!-- Formulario -->
+        <form class="form-subetureceta" id="formReceta" name="frm">
+          <div class="form-grupo">
+            <label for="nombrereceta">Nombre de la Receta:</label>
+            <input type="text" id="nombrereceta" name="nombrereceta" />
+          </div>
+
+          <div class="form-grupo">
+            <label for="pais">País de la Receta:</label>
+            <select id="pais" name="pais">
+              <option value="peru">Perú</option>
+              <option value="mexico">México</option>
+              <option value="colombia">Colombia</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label for="ingredientes">Ingredientes:</label>
+            <textarea id="ingredientes" name="ingredientes" rows="3"></textarea>
+          </div>
+
+          <div class="form-grupo">
+            <label for="preparacion">Preparación:</label>
+            <textarea id="preparacion" name="preparacion" rows="3"></textarea>
+          </div>
+
+          <div class="form-grupo">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" />
+          </div>
+
+          <div class="form-grupo">
+            <label for="correo">Correo:</label>
+            <input type="text" id="correo" name="correo" />
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+
+        <!-- Texto del lado derecho -->
+        <div class="instrucciones-subetureceta">
+          <p>
+            Completa el formulario con los datos necesarios. A tu correo llegará
+            un mensaje de confirmación una vez la recete proporcionada haya sido
+            revisada.
+          </p>
+          <p>Recuerda utilizar un correo válido</p>
+          <div
+            id="mensajeEnviado"
+            class="mensaje-enviado"
+            style="display: none"
+          >
+            Mensaje enviado correctamente.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seccion de Valoración -->
+    <section id="valoracion" class="valoracion">
+      <!-- Formulario de Valoracion -->
+      <div class="valoracion-form">
+        <h2>Valora una receta</h2>
+        <form class="form-valoracion" id="frmValor" name="form">
+          <label for="name">Usuario:</label>
+          <input type="text" id="name" name="name" />
+
+          <label for="nomreceta">Nombre de la Receta:</label>
+          <input type="text" id="nomreceta" name="nomreceta" />
+
+          <label for="valor">Valoración(0-5):</label>
+          <input type="number" id="valor" name="valor" min="0" max="20" />
+
+          <button type="submit">Publicar</button>
+        </form>
+      </div>
+
+      <!-- Lista de Valoraciones -->
+      <div class="valoracion-visual">
+        <h2>Lista de Valoraciones</h2>
+        <ul id="listaValoraciones"></ul>
+      </div>
+    </section>
+
+    <section id="footer">
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Logo y Nombre del Sitio -->
+          <div class="footer-brand">
+            <img src="Imagenes/logo.png" alt="Logo" class="footer-logo" />
+            <p>Comida Express</p>
+            <small>© 2025 Todos los derechos reservados</small>
+          </div>
+
+          <!-- Enlaces legales -->
+          <div class="footer-links">
+            <h4>Legal</h4>
+            <a href="Documentos/Política de Privacidad.pdf"
+              >Política de Privacidad</a
+            >
+            <a href="Documentos/Términos y Condiciones generales.pdf"
+              >Términos y Condiciones</a
+            >
+            <a href="Documentos/pwc-ley-de-proteccion-de-datos.pdf"
+              >Protección de Datos</a
+            >
+          </div>
+
+          <!-- Redes sociales con íconos personalizados -->
+          <div class="footer-social">
+            <h4>Síguenos</h4>
+            <a href="https://es.pinterest.com"
+              ><img src="Imagenes/pint.png" alt="Pinterest" class="social-icon"
+            /></a>
+            <a href="https://www.instagram.com"
+              ><img src="Imagenes/ig.webp" alt="Instagram" class="social-icon"
+            /></a>
+            <a href="https://www.threads.com/?hl=es-la"
+              ><img
+                src="Imagenes/threads.webp"
+                alt="Threads"
+                class="social-icon"
+            /></a>
+            <a href="https://x.com/home"
+              ><img src="Imagenes/x.webp" alt="X" class="social-icon"
+            /></a>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <script src="main.js"></script>
+    <script src="subetureceta.js"></script>
+    <script src="valoraciones.js"></script>
+  </body>
+</html>
